@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Setup
+        var contacts = [
+            {
+                "firstName": "Akira",
+                "lastName": "Laine",
+                "number": "0543236543",
+                "likes": ["Pizza", "Coding", "Brownie Points"]
+            },
+            {
+                "firstName": "Harry",
+                "lastName": "Potter",
+                "number": "0994372684",
+                "likes": ["Hogwarts", "Magic", "Hagrid"]
+            },
+            {
+                "firstName": "Sherlock",
+                "lastName": "Holmes",
+                "number": "0487345643",
+                "likes": ["Intriguing Cases", "Violin"]
+            },
+            {
+                "firstName": "Kristian",
+                "lastName": "Vos",
+                "number": "unknown",
+                "likes": ["JavaScript", "Gaming", "Foxes"]
+            }
+        ];
+
+
+
+
+        function lookUpProfile(name, prop) {
+            // Only change code below this line
+            for (const na of contacts) {
+                //console.log(na)
+                //console.log(na[prop])
+                if (na["firstName"] === name) {
+                    if (na.hasOwnProperty(prop)) {
+                        return na[prop];
+                    } else {
+                        return "No such property";
+                    }
+                }
+
+            }
+            return "No such contact";
+        }
+
+        //console.log(lookUpProfile("Kristian", "lastName"))
+
+
+        function countdown(startNum, endNum) {
+            if (endNum - startNum === 0) {
+                return [startNum]
+            } else {
+                const countArray = countdown(startNum, endNum - 1);
+                countArray.push(endNum);
+                return countArray
+            }
+        }
+
+        //console.log(countdown(1, 3))
+
+        const s = [5, 7, 2];
+        function editInPlace() {
+            'use strict';
+            // Only change code below this line
+            let last = s.pop()
+            s.unshift(last)
+            return s
+
+            // Only change code above this line
+        }
+        //console.log(editInPlace());
+
+
+        function canNest(arr1, arr2) {
+            if (
+                Math.min(...arr1) > Math.min(...arr2) && Math.max(...arr1) < Math.max(...arr2)
+            ) {
+                return true
+            } else {
+                return false
+            }
+
+        }
+
+        //console.log(canNest([1, 2, 3, 4], [0, 6]))
+
+
+        let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+        let vowelRegex = /[aeiou]/gi; // Change this line
+        newQuote = quoteSample.replace(vowelRegex, "*")
+
+        console.log(newQuote)
+
+        let movieName = "2001: A Space Odyssey";
+        let numRegex = /\d/g; // Change this line
+        resu = movieName.replace(numRegex, "*")
+        console.log(resu)
+
+        let hello = "   Hello, World!  ";
+        let wsRegex = /\s/g;
+        let result = hello.replace(wsRegex, ""); // Change this line
+        console.log(result)
+
+    </script>
+</body>
+
+</html>
